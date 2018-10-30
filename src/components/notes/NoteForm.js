@@ -63,7 +63,7 @@ class NoteForm extends Component {
     // });
     setTimeout(() => {
       this.props.history.push('/');
-    }, 1000);
+    }, 200);
   };
 
   changeHandler = event => {

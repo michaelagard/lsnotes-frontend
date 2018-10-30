@@ -27,7 +27,7 @@ class NoteView extends Component {
     this.props.deleteNote(this.props.match.params.id);
     setTimeout(() => {
       this.props.history.push('/');
-    }, 1000);
+    }, 200);
   }
   editNoteHandler(event) {
     // console.log(
@@ -50,9 +50,9 @@ class NoteView extends Component {
     this.setState({
       edit: false
     });
-    // setTimeout(() => {
-    //   this.props.history.push('/');
-    // }, 1000);
+    setTimeout(() => {
+      this.props.history.push('/');
+    }, 100);
   };
 
   changeHandler = event => {

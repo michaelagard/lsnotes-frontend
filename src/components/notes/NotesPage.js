@@ -12,25 +12,26 @@ class NotesPage extends Component {
     return (
       <NotesPageWrapper>
         {this.props.fetching ? (
-          <p>Reticulating Splines...</p>
+          // <p>Reticulating Splines...</p>
+          <p></p>
         ) : (
-          <React.Fragment>
-            <NoteHeaderWrapper>Your Notes:</NoteHeaderWrapper>
-            <NotesWrapper>
-              {this.props.notes.map(note => {
-                return (
-                  <NoteList
-                    tags={note.tags}
-                    title={note.title}
-                    textBody={note.textBody}
-                    key={note._id}
-                    id={note._id}
-                  />
-                );
-              })}
-            </NotesWrapper>
-          </React.Fragment>
-        )}
+            <React.Fragment>
+              <NoteHeaderWrapper>Your Notes:</NoteHeaderWrapper>
+              <NotesWrapper>
+                {this.props.notes.map(note => {
+                  return (
+                    <NoteList
+                      tags={note.tags}
+                      title={note.title}
+                      textBody={note.textBody}
+                      key={note._id}
+                      id={note._id}
+                    />
+                  );
+                })}
+              </NotesWrapper>
+            </React.Fragment>
+          )}
         {this.props.error ? <p>{this.props.error}</p> : null}
       </NotesPageWrapper>
     );
@@ -56,6 +57,7 @@ const NotesWrapper = styled.div`
 `;
 const NotesPageWrapper = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
   background: #f2f1f2;
 `;
